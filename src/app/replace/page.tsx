@@ -1,3 +1,3 @@
 export default function Replace() {
-  return <div>Replace</div>;
+    return <div>Replace</div>;
 }

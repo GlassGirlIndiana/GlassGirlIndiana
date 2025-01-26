@@ -1,3 +1,3 @@
 export default function Repair() {
-  return <div>Repair</div>;
+    return <div>Repair</div>;
 }

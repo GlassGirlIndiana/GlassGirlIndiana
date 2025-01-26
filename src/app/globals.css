@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-  body {
-    @apply bg-brand-grey text-white;
-  }
+    body {
+        @apply bg-brand-grey text-white;
+    }
+    a {
+        @apply hover:text-brand-green;
+    }
 }
