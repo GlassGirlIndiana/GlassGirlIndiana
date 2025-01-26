@@ -1,3 +1,3 @@
 export default function Repair() {
-    return <div>Repair</div>;
+    return <div className="h-screen items-center justify-center flex">Repair</div>;
 }
