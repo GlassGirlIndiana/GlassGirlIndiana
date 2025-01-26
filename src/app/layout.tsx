@@ -6,16 +6,6 @@ import Link from "next/link";
 import PhoneNumberLink from "../components/phoneNumber";
 import { PhoneNumber } from "../lib/constants";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "24/7 Auto Glass Repair",
   description: "24/7 Auto Glass Repair",
@@ -28,25 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <header className="flex flex-col gap-4 items-center">
           <PhoneNumberLink />
           <nav className="flex gap-4 items-center">
-            <Image
-              src="/bizCardFront.jpg"
-              alt=""
-              width={80}
-              height={40}
-            />
-            <Link href={'/'}>Home</Link>
-            <Link href={'/replace'}>Replace</Link>
-            <Link href={'/repair'}>Repair</Link>
-            <Link href={'/quote'} className="border border-brand-green p-2">Quote</Link>
-            <Link href={'/about'}>About</Link>
-            <Link href={'/contact'}>Contact</Link>
-            <Link href={'/reviews'}>Reviews</Link>
+            <Image src="/bizCardFront.jpg" alt="" width={80} height={40} />
+            <Link href={"/"}>Home</Link>
+            <Link href={"/replace"}>Replace</Link>
+            <Link href={"/repair"}>Repair</Link>
+            <Link href={"/quote"} className="border border-brand-green p-2">
+              Quote
+            </Link>
+            <Link href={"/about"}>About</Link>
+            <Link href={"/contact"}>Contact</Link>
+            <Link href={"/reviews"}>Reviews</Link>
           </nav>
         </header>
         <main className="flex flex-col max-w-4xl mx-auto px-4 py-8">
@@ -56,11 +41,10 @@ export default function RootLayout({
           <div className="flex gap-12 bg-brand-green-dark text-white p-4 w-full justify-center">
             <div className="flex flex-col items-center gap-4">
               <span>Contact</span>
-              24/7 Auto Glass Repair
-              Address
+              24/7 Auto Glass Repair Address
               {PhoneNumber}
               Socials
-              <Link href={'/quote'}>Request Quote</Link>
+              <Link href={"/quote"}>Request Quote</Link>
             </div>
             <div className="flex flex-col items-center gap-4">
               <span>Services</span>
