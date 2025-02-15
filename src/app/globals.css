@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    body {
-        @apply bg-brand-grey text-white;
+@layer utilities {
+    ::-webkit-scrollbar {
+        @apply hidden;
     }
+}
+
+@layer components {
     a {
         @apply hover:text-brand-green;
+    }
+    details > summary {
+        @apply list-none;
+    }
+    details summary::-webkit-details-marker {
+        @apply hidden;
     }
 }

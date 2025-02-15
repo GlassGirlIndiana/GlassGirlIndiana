@@ -12,6 +12,7 @@ import {
     FaInstagram,
     FaTwitter,
 } from 'react-icons/fa';
+import { FiMenu } from 'react-icons/fi';
 
 export const metadata: Metadata = {
     title: '24/7 Auto Glass Repair',
@@ -25,9 +26,28 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="py-8">
-                <header className="flex flex-col gap-4 items-center">
-                    <nav className="flex w-full justify-between items-center max-w-4xl">
+            <body className="py-8 bg-brand-grey text-white relative">
+                <header className="flex flex-col gap-4 items-center sticky md:static bg-brand-grey top-0 z-10">
+                    <nav className="md:hidden flex w-full justify-between items-center max-w-5xl px-8 md:px-0">
+                        <Link href={'/'}>
+                            <Image src="/logo.jpg" alt="" width={120} height={0} />
+                        </Link>
+                        <details className="relative">
+                            <summary className="">
+                                <FiMenu className="h-12 w-12" />
+                            </summary>
+                            <div className="flex flex-col gap-4 w-24 pl-4 -left-4 justify-center absolute bg-brand-green-dark">
+                                <Link href={'/'}>Home</Link>
+                                <Link href={'/replace'}>Replace</Link>
+                                <Link href={'/repair'}>Repair</Link>
+                                <Link href={'/quote'}>Quote</Link>
+                                <Link href={'/about'}>About</Link>
+                                <Link href={'/contact'}>Contact</Link>
+                                <Link href={'/reviews'}>Reviews</Link>
+                            </div>
+                        </details>
+                    </nav>
+                    <nav className="hidden md:flex w-full justify-between items-center max-w-5xl px-8 md:px-0">
                         <Link href={'/'}>
                             <Image src="/logo.jpg" alt="" width={180} height={0} />
                         </Link>
@@ -45,10 +65,10 @@ export default function RootLayout({
                         <Link href={'/reviews'}>Reviews</Link>
                     </nav>
                 </header>
-                <main className="flex flex-col max-w-4xl mx-auto px-4">{children}</main>
+                <main className="flex flex-col max-w-5xl mx-auto px-4">{children}</main>
                 <footer className="flex flex-col items-center justify-center">
                     <div className="flex gap-12 bg-brand-green-dark text-white p-4 w-full justify-center">
-                        <div className="flex justify-between w-full max-w-4xl">
+                        <div className="flex bg-brand-grey md:bg-transparent flex-col gap-4 md:gap-0 md:flex-row justify-between w-full max-w-5xl p-8 md:p-0">
                             <div className="flex flex-col items-center gap-4">
                                 <span>Contact</span>
                                 <span>24/7 Auto Glass Repair</span>
@@ -60,14 +80,14 @@ export default function RootLayout({
                                 <span>
                                     <Link
                                         href="/quote"
-                                        className="py-2 px-4 bg-brand-grey hover:bg-black text-white items-center flex rounded-lg"
+                                        className="py-2 px-4 bg-brand-green-dark md:bg-brand-grey hover:bg-black text-white items-center flex rounded-lg text-center"
                                     >
                                         Request Quote
                                     </Link>
                                 </span>
                             </div>
-                            <div className="flex flex-col items-center gap-4">
-                                <span>Services</span>
+                            <div className="flex flex-col items-center md:gap-4 bg-brand-green-dark md:bg-transparent p-4">
+                                <span>Services:</span>
                                 <ul>
                                     <li>Auto Glass Replacement</li>
                                     <li>Windshield Repair</li>
@@ -86,7 +106,7 @@ export default function RootLayout({
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-between w-full max-w-4xl mt-12">
+                    <div className="flex flex-col md:flex-row gap-8 justify-between w-full max-w-5xl px-8 md:px-0 mt-12">
                         <div className="flex flex-col items-center gap-4">
                             <span>Hours</span>
                             <ul>
